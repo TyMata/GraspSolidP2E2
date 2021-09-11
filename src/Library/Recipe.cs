@@ -35,6 +35,13 @@ namespace Full_GRASP_And_SOLID.Library
                     $"usando '{step.Equipment.Description}' durante {step.Time}\n");
             }
             ConsolePrinter.ConsolePrintRecipe(sb);
+            //Se cambio el metodo"PrintRecipe()"por el metodo "CreateRecipe()" 
+            //ya que si le otorgaba la responsabilidad de imprimir a la clase Recipe esta tendria mas
+            // de una razon de cambio e incumpliria con el SRP
+            //Para solucionar esto se creo la clase ConsolePrinter y el metodo "ConsolePrintRecipe()" 
+            //cumpliendo asi con el SRP ya que la unica razon de cambio seria que se quiera imprimir 
+            //con un formato diferente y si se quiere añadir una nueva forma de imprimir se deberia 
+            //crear una clase nueva para esa nueva responsabilidad
         }
     }
 }
